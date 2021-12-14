@@ -275,7 +275,7 @@ elseif(isset($_GET['css']))
 
 	#footer #version {
 		margin-bottom: 1.5em;
-		font-size: 0.85em;
+		font-size: 0.9em;
 		color: #999;
 	}
 
@@ -344,7 +344,7 @@ else
 				<td id="contenu">
 					::contenu::
 					<div id="footer">
-						<p id="version"><b>php_global_infos()</b> version <b>1.2</b></p>
+						<p id="version">Version <b>1.2</b></p>
 						<p id="auteur">&copy; <a target="_blank" href="https://wltrdr.dev/">wltrdr.dev</a></p>
 					</div>
 				</td>
