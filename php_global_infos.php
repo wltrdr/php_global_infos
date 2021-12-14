@@ -1,4 +1,5 @@
 <?php
+define('version_script', '1.3.1');
 session_start();
 
 if(isset($_GET['js']))
@@ -276,7 +277,7 @@ else
 				<td id="contenu">
 					::contenu::
 					<div id="footer">
-						<p id="version">Version <b>1.3</b></p>
+						<p id="version">Version <b>' . version_script . '</b></p>
 						<p id="auteur">&copy; <a target="_blank" href="https://wltrdr.dev/">wltrdr.dev</a></p>
 					</div>
 				</td>
@@ -306,20 +307,31 @@ else
 
 	if(preg_match('#<td[^>]*>PHP Version[^<]*</td><td[^>]*>([0-9\.]+)#i', $phpinfo, $matches))
 	{
-		$version = $matches[1];
+		$version_php = $matches[1];
 	}
 	else
 	{
-		$version = 'Inconnue';
+		$version_php = 'Inconnue';
 	}
 
-	$menu = '';
-	$contenu = '';
+	$menu = "\n";
+	$contenu = "\n";
 	$disp_none = ' style="display: none;"';
 	$i = 0;
 
+	function afftabs($nb)
+	{
+		$return = '';
+		for($i = 0; $i < $nb; $i++)
+		{
+			$return .= "\t";
+		}
+		return $return;
+	}
+
 	foreach($glob_vars as $k => $v)
 	{
+
 		if(isset($v) AND !empty($v))
 		{
 			$id = preg_replace('#[^a-z0-9]#', '', strtolower($k));
@@ -334,15 +346,15 @@ else
 				$contenu_disp = '';
 				$i++;
 			}
-			$menu .= "<a id=\"lien_$id\" onclick=\"javascript:affiche('$id');\"$menu_disp_a>$menu_txt</a><span id=\"span_$id\"$menu_disp_s>$menu_txt</span>\n";
-			$contenu .= "<div id=\"section_$id\"$contenu_disp>\n";
+			$menu .= afftabs(7) . "<a id=\"lien_$id\" onclick=\"javascript:affiche('$id');\"$menu_disp_a>$menu_txt</a><span id=\"span_$id\"$menu_disp_s>$menu_txt</span>\n";
+			$contenu .= afftabs(5) . "<div id=\"section_$id\"$contenu_disp>\n";
 			if($v == 'phpinfo')
 			{
-				$contenu .= str_replace('</div>', '', preg_replace('#<div.*>#U', '', explode('</body>', explode('<body>', $phpinfo)[1])[0]))."\n";
+				$contenu .= str_replace('</div>', '', preg_replace('#<div.*>#U', '', explode('</body>', explode('<body>', implode("\n" . afftabs(6) , explode("\n", $phpinfo)))[1])[0]))."\n";
 			}
 			else
 			{
-				$contenu .= "<table>\n";
+				$contenu .= afftabs(6) . "<table>\n";
 				$j = 0;
 				foreach($v as $var => $val)
 				{
@@ -356,7 +368,7 @@ else
 						$class = ' class="bgViolet"';
 						$j = 0;
 					}
-					$contenu .= "<tr$class>\n<td><b>".htmlentities($var, ENT_QUOTES)."</b></td>\n<td class=\"val\">";
+					$contenu .= afftabs(7) . "<tr$class>\n" . afftabs(8) . "<td><b>".htmlentities($var, ENT_QUOTES)."</b></td>\n" . afftabs(8) . "<td class=\"val\">";
 					if(is_array($val))
 					{
 						ob_start();
@@ -369,17 +381,17 @@ else
 					{
 						$contenu .= htmlentities($val, ENT_QUOTES);
 					}
-					$contenu .= "</td>\n</tr>\n";
+					$contenu .= "</td>\n" . afftabs(7) . "</tr>\n";
 				}
-				$contenu .= "</table>\n";
+				$contenu .= afftabs(6) . "</table>\n";
 			}
-			$contenu .= "</div>\n";
+			$contenu .= afftabs(5) . "</div>\n";
 		}
 	}
 
 	echo str_replace(
 		array('::contenu::', '::menu::', '::version::'),
-		array($contenu, $menu, $version),
+		array($contenu, $menu, $version_php),
 		$template
 	);
 }
