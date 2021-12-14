@@ -273,6 +273,12 @@ elseif(isset($_GET['css']))
 			text-align: left;
 		}
 
+	td.val {
+		min-width: 15em;
+		overflow-wrap: break-word;
+		word-break: break-word;
+	}
+
 	#footer #version {
 		margin-bottom: 1.5em;
 		font-size: 0.9em;
@@ -424,7 +430,7 @@ else
 						$class = ' class="bgViolet"';
 						$j = 0;
 					}
-					$contenu .= "<tr$class>\n<td><b>".htmlentities($var, ENT_QUOTES)."</b></td>\n<td>";
+					$contenu .= "<tr$class>\n<td><b>".htmlentities($var, ENT_QUOTES)."</b></td>\n<td class=\"val\">";
 					if(is_array($val))
 					{
 						ob_start();
