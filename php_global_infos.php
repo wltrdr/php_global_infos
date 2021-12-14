@@ -110,10 +110,6 @@ elseif(isset($_GET['css']))
 	@media screen and (max-width: 100px) { body { font-size: 2px; } }
 	@media screen and (max-width: 75px) { body { font-size: 1px; } }
 
-	.bgViolet {
-		background-color: #ddf;
-	}
-
 	#website {
 		width: 100%;
 		height: 100%;
@@ -198,6 +194,10 @@ elseif(isset($_GET['css']))
 			padding: 0.35em 0.7em;
 			text-align: left;
 		}
+
+	tr.bgViolet {
+		background-color: #ddf;
+	}
 
 	td.val {
 		min-width: 15em;
