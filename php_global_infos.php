@@ -276,7 +276,7 @@ else
 				<td id="contenu">
 					::contenu::
 					<div id="footer">
-						<p id="version">Version <b>1.2</b></p>
+						<p id="version">Version <b>1.3</b></p>
 						<p id="auteur">&copy; <a target="_blank" href="https://wltrdr.dev/">wltrdr.dev</a></p>
 					</div>
 				</td>
