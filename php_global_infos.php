@@ -94,95 +94,21 @@ elseif(isset($_GET['css']))
 		vertical-align: top;
 	}
 
-	@media screen and (max-width: 450px) {
-		body {
-			font-size: 15px;
-		}
-	}
-	
-	@media screen and (max-width: 400px) {
-		body {
-			font-size: 14px;
-		}
-	}
-	
-	@media screen and (max-width: 375px) {
-		body {
-			font-size: 13px;
-		}
-	}
-	
-	@media screen and (max-width: 350px) {
-		body {
-			font-size: 12px;
-		}
-	}
-	
-	@media screen and (max-width: 325px) {
-		body {
-			font-size: 11px;
-		}
-	}
-	
-	@media screen and (max-width: 300px) {
-		body {
-			font-size: 10px;
-		}
-	}
-	
-	@media screen and (max-width: 275px) {
-		body {
-			font-size: 9px;
-		}
-	}
-	
-	@media screen and (max-width: 250px) {
-		body {
-			font-size: 8px;
-		}
-	}
-	
-	@media screen and (max-width: 225px) {
-		body {
-			font-size: 7px;
-		}
-	}
-	
-	@media screen and (max-width: 200px) {
-		body {
-			font-size: 6px;
-		}
-	}
-	
-	@media screen and (max-width: 175px) {
-		body {
-			font-size: 5px;
-		}
-	}
-	
-	@media screen and (max-width: 150px) {
-		body {
-			font-size: 4px;
-		}
-	}
-	
-	@media screen and (max-width: 125px) {
-		body {
-			font-size: 3px;
-		}
-	}
-	
-	@media screen and (max-width: 100px) {
-		body {
-			font-size: 2px;
-		}
-	}
-	
-	@media screen and (max-width: 75px) {
-		body {
-			font-size: 1px;
-		}
-	}
+	@media screen and (max-width: 450px) { body { font-size: 15px; } }
+	@media screen and (max-width: 400px) { body { font-size: 14px; } }
+	@media screen and (max-width: 375px) { body { font-size: 13px; } }
+	@media screen and (max-width: 350px) { body { font-size: 12px; } }
+	@media screen and (max-width: 325px) { body { font-size: 11px; } }
+	@media screen and (max-width: 300px) { body { font-size: 10px; } }
+	@media screen and (max-width: 275px) { body { font-size: 9px; } }
+	@media screen and (max-width: 250px) { body { font-size: 8px; } }
+	@media screen and (max-width: 225px) { body { font-size: 7px; } }
+	@media screen and (max-width: 200px) { body { font-size: 6px; } }
+	@media screen and (max-width: 175px) { body { font-size: 5px; } }
+	@media screen and (max-width: 150px) { body { font-size: 4px; } }
+	@media screen and (max-width: 125px) { body { font-size: 3px; } }
+	@media screen and (max-width: 100px) { body { font-size: 2px; } }
+	@media screen and (max-width: 75px) { body { font-size: 1px; } }
 
 	.bgViolet {
 		background-color: #ddf;
